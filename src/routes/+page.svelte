@@ -74,7 +74,7 @@ function inView(node: HTMLElement) {
 					href={link.link}
 					target={link.platform === Platform.CV ? undefined : '_blank'}
 					rel="noreferrer"
-					download={link.platform === Platform.CV ? true : undefined}
+					download={link.platform === Platform.CV ? 'CV_Gerardo_Salazar' : undefined}
 				>
 					<Icon icon={getPlatfromIcon(link.platform)} color="white" size="20px" />
 

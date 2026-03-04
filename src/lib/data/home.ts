@@ -27,11 +27,11 @@ export const links: PlatformLink[] = [
 	},
 	{
 		platform: Platform.CV,
-		link: '/cv/CV_Gerardo.pdf',
+		link: 'cv/CV_Gerardo.pdf',
 		label: 'Descargar CV'
 	}
 ];
 
 
 
-export const profileImage = '/logos/perfil.jpg';
+export const profileImage = 'logos/perfil.jpg';
