@@ -3,10 +3,10 @@
     const email = "torresanibal388@gmail.com"; 
 
     const navLinks = [
-        { title: 'Experiencia', to: '/experience', icon: 'i-carbon-development' },
-        { title: 'Proyectos', to: '/projects', icon: 'i-carbon-cube' },
-        { title: 'Habilidades', to: '/skills', icon: 'i-carbon-software-resource-cluster' },
-        { title: 'Educacion', to: '/education', icon: 'i-carbon-education' },
+        { title: 'Experiencia', to: 'experience', icon: 'i-carbon-development' },
+        { title: 'Proyectos', to: 'projects', icon: 'i-carbon-cube' },
+        { title: 'Habilidades', to: 'skills', icon: 'i-carbon-software-resource-cluster' },
+        { title: 'Educacion', to: 'education', icon: 'i-carbon-education' },
     ];
 
     const socials = [
