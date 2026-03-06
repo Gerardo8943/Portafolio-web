@@ -6,7 +6,7 @@ export const items: Array<Education> = [
 		degree: 'Tecnico medio en informatica (Educacion media)',
 		description: '',
 		location: 'Caracas, Venezuela',
-		logo: Assets.Unknown,
+		logo: Assets.edificioSchool,
 		name: '',
 		organization: 'Didascalio Nuestra Señora del Encuentro',
 		period: { from: new Date(2013, 0, 1), to: new Date(2019, 0, 1) },
@@ -18,7 +18,7 @@ export const items: Array<Education> = [
 		degree: 'Tecnico superior universitario',
 		description: '',
 		location: 'Caracas, Venezuela',
-		logo: Assets.Unknown,
+		logo: Assets.pizarra,
 		name: '',
 		organization: 'Universidad Nacional Experimental de la Gran Caracas',
 		period: { from: new Date(2020, 0, 1), to: new Date(2023, 0, 1) },
@@ -30,7 +30,7 @@ export const items: Array<Education> = [
 		degree: 'Curso de programacion',
 		description: 'Aprendizaje en programacion Frontend y Backend',
 		location: 'Caracas',
-		logo: Assets.Unknown, // puedes usar otro logo si tienes
+		logo: Assets.curso, // puedes usar otro logo si tienes
 		name: '',
 		organization: 'ED Tecnica',
 		period: { from: new Date(2022, 1, 1), to: new Date(2022, 5, 30) },
@@ -43,7 +43,7 @@ export const items: Array<Education> = [
 		degree: 'Ingenieria en informatica',
 		description: 'Titulo de ingeniero en informatica',
 		location: 'Caracas',
-		logo: Assets.Unknown, // puedes usar otro logo si tienes
+		logo: Assets.school, // puedes usar otro logo si tienes
 		name: '',
 		organization: 'Universidad Nacional Experimental de la Gran Caracas',
 		period: { from: new Date(2023, 1, 1), to: new Date(2025, 5, 30) },

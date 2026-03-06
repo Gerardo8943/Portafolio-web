@@ -10,13 +10,13 @@ export const items: Array<Experience> = [
 		contract: ContractType.SelfEmployed,
 		type: 'Software Development',
 		location: 'Edificio latino',
-		period: { from: new Date() },
+		period: { from: new Date(2022, 1, 14), to: new Date(2026, 0, 16) },
 		skills: getSkills('php', 'js', 'Laravel', 'Livewire', 'Myadmin','Github'),
-		name: 'Open Source Developer',
+		name: 'Desarrollador de Software',
 		color: 'purple',
 		links: [],
-		logo: Assets.Unknown,
-		shortDescription: 'Creating awesome tools for developers.'
+		logo: Assets.workOffice,
+		shortDescription: 'Programador fullstack, me dedique a crear sistemas administrativos para los empleados.'
 	},
 	{
 		slug: 'software-freelance',
@@ -25,13 +25,13 @@ export const items: Array<Experience> = [
 		contract: ContractType.Freelance,
 		type: 'Software Development',
 		location: 'Home',
-		period: { from: new Date() },
+		period: { from: new Date(2026, 0, 19), to: new Date(2026, 1, 17) },
 		skills: getSkills('php', 'ts', 'css', 'html', 'js', 'Wordpress', 'PostgreSQL', 'Github'),
-		name: 'Freelancer',
+		name: 'Desarrollador de Software',
 		color: 'blue',
 		links: [],
-		logo: Assets.Unknown,
-		shortDescription: 'Creating awesome applications for customers.'
+		logo: Assets.workHome,
+		shortDescription: 'Programador enfocado en crear modulos en Wordpress y crear soluciones fiables.'
 	},
 	
 ];

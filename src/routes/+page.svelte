@@ -11,28 +11,28 @@
 	import ProjectCard from '$lib/components/ProjectCard/ProjectCard.svelte';
 	import { base } from '$app/paths';
 	/* Solo los 2 primeros como destacados */
-const featured = projects.slice(0, 2);
+	const featured = projects.slice(0, 2);
 
-/* Animación al hacer scroll */
-function inView(node: HTMLElement) {
-	const observer = new IntersectionObserver(
-		([entry]) => {
-			if (entry.isIntersecting) {
-				node.classList.add('visible');
-				observer.unobserve(node);
+	/* Animación al hacer scroll */
+	function inView(node: HTMLElement) {
+		const observer = new IntersectionObserver(
+			([entry]) => {
+				if (entry.isIntersecting) {
+					node.classList.add('visible');
+					observer.unobserve(node);
+				}
+			},
+			{ threshold: 0.2 }
+		);
+
+		observer.observe(node);
+
+		return {
+			destroy() {
+				observer.disconnect();
 			}
-		},
-		{ threshold: 0.2 }
-	);
-
-	observer.observe(node);
-
-	return {
-		destroy() {
-			observer.disconnect();
-		}
-	};
-}
+		};
+	}
 </script>
 
 <svelte:head>
@@ -47,18 +47,18 @@ function inView(node: HTMLElement) {
 		<!-- NAME -->
 		<h1
 			in:fly={{ y: 20, duration: 500 }}
-			class="text-4xl md:text-6xl font-bold leading-tight text-yellow-400 drop-shadow-[0_0_25px_rgba(250,204,21,0.35)]"
+			class="text-4xl md:text-6xl font-bold leading-tight text-yellow-400 drop-shadow-[0_0_25px_rgba(250,204,21,0.35)] m-0"
 		>
 			{name}
 		</h1>
 
 		<!-- ROLE -->
-		<h2 class="text-xl md:text-2xl font-medium text-gray-400 mt-2">
+		<h2 class="text-xl md:text-2xl font-medium text-gray-400 mt-4">
 			{lastName}
 		</h2>
 
-		<!-- DESCRIPTION (AMARILLO COMO PEDISTE) -->
-		<p class="mt-6 text-white-400 text-base md:text-lg leading-relaxed">
+		<!-- DESCRIPTION -->
+		<p class="mt-3 text-white-400 text-base md:text-lg leading-relaxed">
 			{description}
 		</p>
 
@@ -92,13 +92,12 @@ function inView(node: HTMLElement) {
 
 		<!-- Image -->
 		<div class="profile-wrapper">
-	<img
-		in:fade={{ duration: 700 }}
-		src={profileImage}
-		alt="Gerardo Salazar"
-		class="profile-img"
-	/>
-</div>
+			<img
+				in:fade={{ duration: 700 }}
+				src={profileImage}
+				alt="Gerardo Salazar"
+				class="profile-img"
+			/>
+		</div>
 	</div>
 </div>
-

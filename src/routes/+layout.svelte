@@ -1,48 +1,68 @@
 <script lang="ts">
-	import 'uno.css';
-	import NavMenu from '$lib/components/NavMenu/NavMenu.svelte';
-	import '$lib/index.scss';
-	import { onHydrated, theme } from '$lib/stores/theme';
-	import { onMount } from 'svelte';
+    import 'uno.css';
+    import NavMenu from '$lib/components/NavMenu/NavMenu.svelte';
+    import Footer from '$lib/components/Footer/Footer.svelte';
+    import '$lib/index.scss';
+    import { onHydrated, theme } from '$lib/stores/theme';
+    import { onMount } from 'svelte';
 
-	// ? moved to +layout.server.ts : will be deleted when we make sure that everything is alright
-	// export const prerender = true;
-
-	onMount(() => onHydrated());
+    onMount(() => onHydrated());
 </script>
 
-<div class={`body contents ${$theme ? 'theme-dark' : 'theme-light'}`}>
-	<NavMenu />
-	<div class="content container"><slot /></div>
+<div class={`app-wrapper ${$theme ? 'theme-dark' : 'theme-light'}`}>
+    
+    <header class="header-layer">
+        <NavMenu />
+    </header>
+
+    <main class="main-layer">
+        <div class="page-content container">
+            <slot />
+        </div>
+        
+        <Footer />
+    </main>
 </div>
 
 <style lang="scss">
-	.content {
-		display: flex;
-		flex-direction: column;
-		flex: 1;
-		padding: 0px 0px;
-	}
+    .app-wrapper {
+        margin: 0;
+        padding: 0;
+        background-color: var(--main);
+        color: var(--main-text);
+        font-family: var(--text-f);
+        transition: background-color 200ms;
+        
+        /* Flexbox para asegurar que el footer baje */
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        width: 100%;
+        overflow-x: hidden;
+    }
 
-	.body {
-		margin: 0px;
-		background-color: var(--main);
-		color: var(--main-text);
-		font-family: var(--text-f);
-		display: flex;
-		flex-direction: column;
-		transition-duration: 200ms;
+    .header-layer {
+        position: fixed; // O fixed, según prefieras
+        top: 0;
+        z-index: 100;
+        width: 100%;
+    }
 
-		letter-spacing: 1px;
+    .main-layer {
+        display: flex;
+        flex-direction: column;
+        flex: 1; /* Toma todo el espacio sobrante */
+        width: 100%;
+    }
 
-		min-height: 100vh;
-	}
+    .page-content {
+        flex: 1; /* Empuja al footer al final de la pantalla */
+        padding: 40px 0; // Espacio entre Navbar y contenido
+    }
 
-	:global(p) {
-		margin: 0px;
-	}
-
-	:global(h1, h2, h3, h4, h5, h6) {
-		margin: 5px 0px;
-	}
+    /* Respetar tus estilos globales */
+    :global(body) {
+        margin: 0;
+        overflow-x: hidden;
+    }
 </style>

@@ -39,7 +39,7 @@ export const items: Array<Project> = [
 		description:
 			'A Vercel-like developer portfolio website template made with Typescript and SvelteKit.',
 		shortDescription:
-			'Intranet la cual puede crear una constancia de trabajo y ver el reporte de ingresos que poseen los trabajadores.',
+			'Intranet la cual permite crear una constancia de trabajo y ver el reporte de ingresos que poseen los trabajadores.',
 		links: [{ to: 'https://github.com/Deiker619/intranet', label: 'GitHub' }],
 		logo: Assets.Laravel,
 		name: 'Intranet (Fundacion Jose Gregorio Hernandez)',

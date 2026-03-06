@@ -9,7 +9,7 @@
 	let result: Array<Experience> = [...items];
 
 	const onSearch = (e: CustomEvent<{ search: string }>) => {
-		const query = e.detail.search;
+		const query = e.detail.search.toLowerCase();
 
 		if (isBlank(query)) {
 			result = items;
@@ -23,6 +23,27 @@
 				it.description.toLowerCase().includes(query)
 		);
 	};
+
+	/* Animación scroll */
+	function inView(node: HTMLElement) {
+		const observer = new IntersectionObserver(
+			([entry]) => {
+				if (entry.isIntersecting) {
+					node.classList.add('visible');
+					observer.unobserve(node);
+				}
+			},
+			{ threshold: 0.2 }
+		);
+
+		observer.observe(node);
+
+		return {
+			destroy() {
+				observer.disconnect();
+			}
+		};
+	}
 </script>
 
 <SearchPage {title} on:search={onSearch}>
@@ -33,19 +54,24 @@
 				<p class="font-300">Could not find anything...</p>
 			</div>
 		{:else}
+			<!-- Línea central -->
 			<div
 				class="w-[0.5px] hidden lg:flex top-0 bottom-0 py-50px bg-[var(--border)] absolute rounded"
 			/>
+
 			{#each result as job, index (job.slug)}
 				<div
-					class={`flex ${
+					use:inView
+					class={`experience-item flex ${
 						index % 2 !== 0 ? 'flex-row' : 'flex-row-reverse'
-					} relative items-center w-full my-[10px]`}
+					} relative items-center w-full my-[30px]`}
 				>
 					<div class="flex-1 hidden lg:flex" />
+
 					<div class="hidden lg:inline p-15px bg-[var(--main)] rounded">
-						<UIcon icon="i-carbon-condition-point" classes="" />
+						<UIcon icon="i-carbon-condition-point" />
 					</div>
+
 					<div class="flex-1 col items-stretch">
 						<ExperienceCard experience={job} />
 					</div>
