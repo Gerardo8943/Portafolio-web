@@ -34,7 +34,7 @@ export const items: Array<Project> = [
 		slug: 'intranet-recursos-humanos',
 		color: '#D11313',
 		description:
-			'A Vercel-like developer portfolio website template made with Typescript and SvelteKit.',
+			'Junto con el equipo de tecnologia de la Fundacion Mision Jose Gregorio Hernandez, se construyo un sistema tipo intranet, el cual su funcion es informar a un trabajador individual sus reportes de pago, ademas de generarle una constancia de trabajo. Esto ayudo muchisimo, ya que anteriormente este proceso lo realizaba recursos humanos, ahora ,con este sistema , el trabajador tiene un usuario, el cual puede acceder al sistema mediante a un login. Puede cambiar sus credenciales, ademas de poder exportar a PDF sus reportes de pago del mes y tambien exportar a PDF su constancia de trabajo.',
 		shortDescription:
 			'Intranet la cual permite crear una constancia de trabajo y ver el reporte de ingresos que poseen los trabajadores.',
 		links: [{ to: 'https://github.com/Deiker619/intranet', label: 'GitHub' }],
@@ -54,10 +54,6 @@ export const items: Array<Project> = [
 				label: '2',
 				src: '/proyectos/intranet/login_intranet.png'
 			},
-			{
-				label: '3',
-				src: 'https://images.unsplash.com/photo-1537432376769-00f5c2f4c8d2?auto=format&fit=crop&w=500&q=60'
-			}
 		]
 	},
 	{

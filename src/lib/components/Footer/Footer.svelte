@@ -19,7 +19,7 @@
     <div class="footer-inner">
         <div class="footer-cta">
             <div class="cta-left">
-                <h2 class="title-yellow">Contactame!</h2>
+                <h2 class="title-yellow">Trabajemos juntos!</h2>
                 <a href="mailto:{email}" class="email-display">
                     {email}
                     <span class="underline-glow"></span>
