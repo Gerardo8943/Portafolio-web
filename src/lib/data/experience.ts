@@ -16,7 +16,7 @@ export const items: Array<Experience> = [
 		color: 'purple',
 		links: [],
 		logo: Assets.workOffice,
-		shortDescription: 'Programador fullstack, me dedique a crear sistemas administrativos para los empleados.'
+		shortDescription: 'Creacion de sistemas administrativos, migraciones, control de versiones y mejorar la productividad.'
 	},
 	{
 		slug: 'software-freelance',
@@ -31,7 +31,7 @@ export const items: Array<Experience> = [
 		color: 'blue',
 		links: [],
 		logo: Assets.workHome,
-		shortDescription: 'Programador enfocado en crear modulos en Wordpress y crear soluciones fiables.'
+		shortDescription: 'Creacion de modulos en Wordpress, mejorar el rendimiento de la web, integraciones del backend con el frontend.'
 	},
 	
 ];

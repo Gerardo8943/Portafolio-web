@@ -22,18 +22,18 @@ export const countMonths = (from: Date, to: Date = new Date()): number => {
 
 export const getMonthName = (index: number): string => {
 	const monthNames = [
-		'January',
-		'February',
-		'March',
-		'April',
-		'May',
-		'June',
-		'July',
-		'August',
-		'September',
-		'October',
-		'November',
-		'December'
+		'Enero',
+		'Febrero',
+		'Marzo',
+		'Abril',
+		'Mayo',
+		'Junio',
+		'Julio',
+		'Augosto',
+		'Septiembre',
+		'Octubre',
+		'Noviembre',
+		'Diciembre'
 	];
 
 	return monthNames[index];
@@ -50,19 +50,19 @@ export function getTimeDiff(date1: Date, date2 = new Date(Date.now() + 1000 * 60
 	const duration = dayjs.duration(d2.diff(d1));
 
 	let n = 0;
-	let u = 'day';
+	let u = 'dia';
 
 	if (duration.as('days') <= 7) {
-		u = 'day';
+		u = 'dia';
 		n = duration.as('days');
 	} else if (duration.as('months') <= 1) {
-		u = 'week';
+		u = 'semana';
 		n = duration.as('weeks');
 	} else if (duration.as('years') <= 1) {
-		u = 'month';
+		u = 'mes';
 		n = duration.as('months');
 	} else {
-		u = 'year';
+		u = 'año';
 		n = duration.as('years');
 	}
 
@@ -132,29 +132,29 @@ export function computeExactDuration(from: Date, to: Date = new Date()): string 
 
 	if (years >= 1) {
 		remaining = remaining % YEAR;
-		display.push(`${Math.trunc(years)} year${years >= 2 ? 's' : ''}`);
+		display.push(`${Math.trunc(years)} año${years >= 2 ? 's' : ''}`);
 	}
 
 	const months = remaining / MONTH;
 	if (months >= 1) {
 		remaining = remaining % MONTH;
-		display.push(`${Math.trunc(months)} month${months >= 2 ? 's' : ''}`);
+		display.push(`${Math.trunc(months)} mes${months >= 2 ? 'es' : ''}`);
 	}
 
 	const weeks = remaining / WEEK;
 	if (weeks >= 1) {
 		remaining = remaining % WEEK;
-		display.push(`${Math.trunc(weeks)} week${weeks >= 2 ? 's' : ''}`);
+		display.push(`${Math.trunc(weeks)} semana${weeks >= 2 ? 's' : ''}`);
 	}
 
 	const days = remaining / DAY;
 	if (days >= 1) {
 		remaining = remaining % DAY;
-		display.push(`${Math.trunc(days)} day${days >= 2 ? 's' : ''}`);
+		display.push(`${Math.trunc(days)} dia${days >= 2 ? 's' : ''}`);
 	}
 
 	if (display.length === 0) {
-		return '1 day';
+		return '1 dia';
 	}
 
 	return display
@@ -162,7 +162,7 @@ export function computeExactDuration(from: Date, to: Date = new Date()): string 
 			if (display.length === 1 || index === display.length - 1) return it;
 
 			if (index === display.length - 2) {
-				return `${it} and`;
+				return `${it} y`;
 			}
 
 			return `${it},`;
