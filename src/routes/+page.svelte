@@ -9,7 +9,7 @@
     import Icon from '$lib/components/Icon/Icon.svelte';
 
     let aboutCode = "";
-    // Código PHP alineado al borde para evitar sangrías no deseadas
+
     const fullAboutCode = `<?php
 namespace App\\Developer;
 
@@ -22,37 +22,38 @@ class Gerardo {
         ];
     }
 }`;
-    
+
     let aboutVisible = false;
     let isCodeFinished = false;
-    let activeTechColor = ""; 
 
     function triggerAbout(node: HTMLElement) {
         const observer = new IntersectionObserver(([entry]) => {
             if (entry.isIntersecting && !aboutVisible) {
                 aboutVisible = true;
                 let j = 0;
-                const interval = setInterval(() => {
+
+                const typeChar = () => {
                     if (j < fullAboutCode.length) {
                         aboutCode += fullAboutCode[j];
                         j++;
+                        setTimeout(typeChar, Math.random() * 20 + 10);
                     } else {
-                        clearInterval(interval);
                         isCodeFinished = true;
                     }
-                }, 15);
+                };
+
+                setTimeout(typeChar, 400);
             }
         }, { threshold: 0.2 });
-        observer.observe(node);
-        return { destroy() { observer.disconnect(); } };
-    }
 
-    const mainTechs = [
-        { name: 'PHP', color: '#818cf8', shadow: 'rgba(129, 140, 248, 0.4)', delay: '0s' },
-        { name: 'Laravel', color: '#ef4444', shadow: 'rgba(239, 68, 68, 0.4)', delay: '0.5s' },
-        { name: 'SQL', color: '#60a5fa', shadow: 'rgba(96, 165, 250, 0.4)', delay: '1s' },
-        { name: 'Livewire', color: '#f472b6', shadow: 'rgba(244, 114, 182, 0.4)', delay: '1.5s' }
-    ];
+        observer.observe(node);
+
+        return {
+            destroy() {
+                observer.disconnect();
+            }
+        };
+    }
 </script>
 
 <svelte:head>
@@ -60,163 +61,253 @@ class Gerardo {
 </svelte:head>
 
 <div class="relative flex flex-col md:flex-row items-center justify-between min-h-[80vh] px-6 md:px-16 lg:px-24 z-10 overflow-visible py-12">
+
     <div in:fly={{ x: -40, duration: 600 }} class="max-w-2xl text-left z-20">
+
         <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-yellow-400 drop-shadow-[0_0_15px_rgba(250,204,21,0.2)] m-0">
             {name}
         </h1>
-        <h2 class="text-xl md:text-2xl font-medium text-gray-400 mt-2">{lastName}</h2>
+
+        <h2 class="text-xl md:text-2xl font-medium text-gray-400 mt-2">
+            {lastName}
+        </h2>
+
         <p class="mt-4 text-gray-300 text-base md:text-lg leading-relaxed max-w-prose">
             {description}
         </p>
-        
+
         <div class="flex flex-wrap items-center gap-3 mt-8">
             {#each links as link, i}
                 <div in:fly={{ y: 10, delay: 400 + (i * 100) }} class="flex-shrink-0">
+
                     <a 
-                        class="bg-violet-700 text-white hover:bg-violet-800 hover:scale-105 hover:shadow-[0_0_15px_rgba(139,92,246,0.3)] transition-all duration-300 px-5 py-2.5 rounded-xl flex items-center gap-2 no-underline border border-white/5 text-sm md:text-base font-medium" 
+                        class="bg-violet-700 text-white hover:bg-violet-800 hover:scale-105 transition-all duration-300 px-5 py-2.5 rounded-xl flex items-center gap-2 no-underline border border-white/5 text-sm md:text-base font-medium" 
                         href={link.link}
                         target={link.platform === Platform.CV ? undefined : '_blank'}
                     >
+
                         <Icon icon={getPlatfromIcon(link.platform)} color="white" size="18px" />
                         {link.label}
+
                     </a>
+
                 </div>
             {/each}
         </div>
+
     </div>
 
     <div class="mt-12 md:mt-0 flex justify-center relative p-8 md:p-12">
+
         <div class="absolute w-64 h-64 bg-violet-600/10 blur-[80px] rounded-full" />
+
         <div class="profile-container" in:scale={{ duration: 700, start: 0.8 }}>
+
             <div class="ring-orbit ring-1"></div>
             <div class="ring-orbit ring-2"></div>
+
             <div class="profile-wrapper">
                 <img src={profileImage} alt={name} class="profile-img" />
             </div>
+
         </div>
+
     </div>
+
 </div>
 
-<section use:triggerAbout class="relative min-h-screen py-20 px-6 md:px-20 border-t border-white/5 bg-black/10">
+<section use:triggerAbout class="relative min-h-[60vh] py-24 px-6 md:px-20 border-t border-white/5 bg-black/20">
+
     <div class="max-w-6xl mx-auto">
-        <h3 class="text-3xl md:text-4xl font-bold text-white mb-12 flex items-center gap-4">
-            <span class="text-violet-500 font-mono text-xl md:text-2xl">01.</span> Quien soy
+
+        <h3 class="text-3xl md:text-4xl font-bold text-white mb-16 flex items-center gap-4">
+           
+            Sobre mí
             <div class="h-[1px] flex-grow bg-gradient-to-r from-violet-500/50 to-transparent"></div>
         </h3>
 
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
-            <div class="flex flex-col gap-6 w-full">
-                <div 
-                    class="relative transition-all duration-700 rounded-xl shadow-2xl overflow-hidden"
-                    style="box-shadow: 0 0 40px {activeTechColor || 'rgba(139, 92, 246, 0.1)'}"
-                >
-                    <div class="bg-[#0a0a0a] border border-white/10 rounded-xl p-5 md:p-7 font-mono relative z-10 text-left">
-                        <div class="flex gap-1.5 mb-5">
-                            <div class="w-3 h-3 rounded-full bg-[#ff5f56]"></div>
-                            <div class="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
-                            <div class="w-3 h-3 rounded-full bg-[#27c93f]"></div>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+            <div class="w-full">
+
+                {#if aboutVisible}
+
+                    <div 
+                        in:fly={{ x: -30, duration: 1000 }}
+                        class="relative rounded-2xl overflow-hidden border border-violet-500/40 bg-[#050505] p-1 shadow-[0_0_50px_rgba(139,92,246,0.15)]"
+                    >
+
+                        <!-- EDITOR DE CÓDIGO -->
+
+                        <div class="code-editor">
+
+                            <div class="editor-header">
+                                <span class="dot red"></span>
+                                <span class="dot yellow"></span>
+                                <span class="dot green"></span>
+                                <span class="file">Perfil.php</span>
+                            </div>
+
+                            <div class="editor-body">
+
+                                <pre class="neon-text text-sm md:text-base leading-relaxed overflow-x-auto">
+{aboutCode}<span class="cursor">|</span>
+                                </pre>
+
+                            </div>
+
                         </div>
-                        <pre class="php-code-radiant text-xs md:text-sm lg:text-base leading-relaxed overflow-x-auto">
-{aboutCode}<span class="animate-pulse text-violet-400">|</span>
-</pre>
+
                     </div>
-                </div>
+
+                {/if}
+
+            </div>
+
+            <div class="flex flex-col gap-6 justify-center">
 
                 {#if isCodeFinished}
-                    <div in:fly={{ y: 20, duration: 800 }} class="bg-white/5 border-l-4 border-violet-500 p-5 rounded-r-xl backdrop-blur-sm">
-                        <p class="text-gray-300 text-base md:text-lg leading-relaxed">
-                            Programador graduado de la carrera de <span class="text-white font-bold">ingeniera en informatica</span>. Desarrollo sistemas robustos priorizando el rendimiento y la escalabilidad.
+
+                    <div in:fly={{ x: 30, duration: 800 }} class="space-y-6">
+
+                        <div class="inline-block px-4 py-1 rounded-full bg-violet-500/10 border border-violet-500/20 text-violet-400 text-sm font-mono tracking-widest uppercase">
+                            Fullstack Developer
+                        </div>
+
+                        <p class="text-gray-300 text-xl md:text-2xl leading-relaxed font-light">
+                           Ingeniero en informatica, 
+                            <span class="text-white font-semibold border-b-2 border-violet-500/50">
+                                especialicado en desarrollo web</span>.
                         </p>
+
+                        <p class="text-gray-400 text-lg md:text-xl leading-relaxed">
+                            Me especializo en el desarrollo de sistemas robustos, priorizando siempre el 
+                            <span class="text-violet-400 italic">rendimiento</span>
+                            y la
+                            <span class="text-violet-400 italic">escalabilidad</span>
+                            de cada proyecto.
+                        </p>
+
                     </div>
+
                 {/if}
+
             </div>
 
-            <div class="grid grid-cols-2 gap-4 md:gap-6 h-fit">
-                {#each mainTechs as tech, i}
-                    <button 
-                        class="tech-card group" 
-                        style="--float-delay: {tech.delay}; --tech-color: {tech.color}"
-                        on:mouseenter={() => activeTechColor = tech.shadow}
-                        on:mouseleave={() => activeTechColor = ""}
-                    >
-                        <div class="relative z-10 flex flex-col items-center">
-                            <span class="text-xl md:text-2xl font-bold tracking-tight" style="color: {tech.color}">
-                                {tech.name}
-                            </span>
-                            <div class="h-[2px] w-6 bg-white/10 mt-2 group-hover:w-12 transition-all duration-500" style="background-color: {tech.color}"></div>
-                            <span class="text-[9px] uppercase tracking-widest text-gray-500 mt-2 font-mono">Expertise</span>
-                        </div>
-                    </button>
-                {/each}
-            </div>
         </div>
+
     </div>
+
 </section>
 
 <style lang="scss">
-    // Garantiza alineación a la izquierda absoluta
-    pre {
-        margin: 0;
-        padding: 0;
-        text-align: left;
-        white-space: pre-wrap; 
-        word-break: break-all;
-    }
 
-    .php-code-radiant {
-        color: #d1b3ff;
-        text-shadow: 0 0 10px rgba(168, 85, 247, 0.3);
-    }
+pre {
+    margin: 0;
+    padding: 0;
+    white-space: pre-wrap;
+    word-break: break-all;
+}
 
-    .tech-card {
+.neon-text {
+    color: #f3e8ff;
+}
+
+.cursor {
+    display: inline-block;
+    width: 10px;
+    background-color: #a855f7;
+    margin-left: 4px;
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+    from, to { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* EDITOR */
+
+.code-editor {
+    background: #0d1117;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.editor-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 14px;
+    background: #161b22;
+}
+
+.file {
+    margin-left: 10px;
+    font-size: 13px;
+    color: #8b949e;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.red { background: #ff5f56; }
+.yellow { background: #ffbd2e; }
+.green { background: #27c93f; }
+
+.editor-body {
+    padding: 20px 24px;
+}
+
+/* PERFIL */
+
+.profile-container {
+    position: relative;
+
+    .profile-wrapper {
         position: relative;
-        padding: 1.5rem;
-        @media (min-width: 768px) { padding: 2.5rem 1.5rem; }
-        background: rgba(255, 255, 255, 0.02);
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        border-radius: 1.25rem;
-        backdrop-filter: blur(8px);
-        transition: all 0.4s ease;
-        animation: floating 5s ease-in-out infinite;
-        animation-delay: var(--float-delay);
+        z-index: 5;
+        border-radius: 40px 100px;
+        overflow: hidden;
 
-        &:hover {
-            border-color: var(--tech-color);
-            background: rgba(255, 255, 255, 0.05);
-            transform: translateY(-8px);
+        img {
+            width: 16rem;
+            height: 20rem;
+            object-fit: cover;
         }
     }
 
-    @keyframes floating {
-        0%, 100% { transform: translateY(0); }
-        50% { transform: translateY(-10px); }
-    }
+    .ring-orbit {
+        position: absolute;
+        border-radius: 50%;
 
-    .profile-container {
-        position: relative;
-        width: fit-content;
-        .profile-wrapper {
-            position: relative;
-            z-index: 5;
-            border-radius: 40px 100px;
-            overflow: hidden;
-            border: none;
-            img { width: 14rem; height: 18rem; @media (min-width: 768px) { width: 16rem; height: 20rem; } object-fit: cover; }
+        &.ring-1 {
+            width: 115%;
+            height: 115%;
+            border: 1.5px solid rgba(139, 92, 246, 0.2);
+            border-top: 2px solid #fbbf24;
+            animation: spin 10s linear infinite;
+            top: -7.5%;
+            left: -7.5%;
         }
-        .ring-orbit {
-            position: absolute;
-            border-radius: 50%;
-            pointer-events: none;
-            &.ring-1 { 
-                width: 115%; height: 115%; border: 1.5px solid rgba(139, 92, 246, 0.2); 
-                border-top: 2px solid #fbbf24; animation: spin 10s linear infinite; top: -7.5%; left: -7.5%; 
-            }
-            &.ring-2 { 
-                width: 135%; height: 135%; border: 1px dashed rgba(255, 255, 255, 0.1); 
-                animation: spin 20s linear infinite reverse; top: -17.5%; left: -17.5%; 
-            }
+
+        &.ring-2 {
+            width: 135%;
+            height: 135%;
+            border: 1px dashed rgba(255, 255, 255, 0.1);
+            animation: spin 20s linear infinite reverse;
+            top: -17.5%;
+            left: -17.5%;
         }
     }
+}
 
-    @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
 </style>

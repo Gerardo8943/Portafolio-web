@@ -1,6 +1,7 @@
-<script lang="ts">
+<script lang="ts"> 
     const currentYear = new Date().getFullYear();
-    const email = "torresanibal388@gmail.com"; 
+    const email = "torresanibal388@gmail.com";
+    const phone = "+58-4129058630"; 
 
     const navLinks = [
         { title: 'Experiencia', to: 'experience', icon: 'i-carbon-development' },
@@ -20,10 +21,20 @@
         <div class="footer-cta">
             <div class="cta-left">
                 <h2 class="title-yellow">Trabajemos juntos!</h2>
-                <a href="mailto:{email}" class="email-display">
-                    {email}
-                    <span class="underline-glow"></span>
-                </a>
+             <div class="contact-info">
+    <br><p>Correo: 
+         <a href="mailto:{email}" class="email-display">
+            {email}
+            <span class="underline-glow"></span>
+        </a>
+    </p>
+    <p>Numero de contacto: 
+        <a href="https://wa.me/584129058630" target="_blank" class="phone-display">
+            {phone}
+            <span class="underline-glow"></span>
+        </a>
+    </p>
+</div>
             </div>
             <div class="availability">
                 <span class="pulse-dot"></span>
@@ -65,7 +76,7 @@
         </div>
 
         <div class="footer-bottom">
-            <p>© {currentYear} — Hecho con <span class="purple-heart">💜</span></p>
+            <p>{currentYear} — Hecho con <span class="purple-heart">💜</span></p>
             <div class="location-tag">
                 <i class="i-carbon-location"></i>
                Caracas/Venezuela
@@ -82,10 +93,9 @@
         border-top: 1px solid rgba(120, 0, 255, 0.15);
         padding: 80px 0 40px 0;
         position: relative;
-        z-index: 1; /* Asegura que no tape al NavMenu si es fixed */
+        z-index: 1;
 
         .footer-inner {
-            /* Usamos la misma lógica de container que tienes en index.scss */
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 40px;
@@ -105,35 +115,47 @@
         gap: 30px;
 
         .title-yellow {
-            color: #fbbf24; // Amarillo
+            color: #fbbf24;
             font-size: clamp(2rem, 5vw, 3.5rem);
             font-weight: 800;
             margin: 0;
             line-height: 0.9;
         }
 
-        .email-display {
-            display: inline-block;
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
             margin-top: 15px;
-            font-size: 1.2rem;
-            color: var(--secondary-text);
-            text-decoration: none;
-            position: relative;
 
-            &:hover {
-                color: #a855f7; // Morado
-                .underline-glow { width: 100%; }
+            .email-display, .phone-display {
+                font-size: 1.2rem;
+                color: var(--secondary-text);
+                text-decoration: none;
+                position: relative;
+
+                &:hover .underline-glow {
+                    width: 100%;
+                }
+
+                .underline-glow {
+                    position: absolute;
+                    bottom: -4px;
+                    left: 0;
+                    width: 30px;
+                    height: 2px;
+                    background: #a855f7;
+                    transition: width 0.3s ease;
+                    box-shadow: 0 0 10px #a855f7;
+                }
             }
 
-            .underline-glow {
-                position: absolute;
-                bottom: -4px;
-                left: 0;
-                width: 30px;
-                height: 2px;
-                background: #a855f7;
-                transition: width 0.3s ease;
-                box-shadow: 0 0 10px #a855f7;
+            .phone-display:hover {
+                color: #25D366;
+                .underline-glow {
+                    background: #25D366;
+                    box-shadow: 0 0 10px #25D366;
+                }
             }
         }
     }
