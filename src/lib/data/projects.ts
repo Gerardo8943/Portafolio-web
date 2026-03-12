@@ -10,7 +10,7 @@ export const items: Array<Project> = [
 			'Sistema que fue realizado en colaboracion con el equipo de tecnologia de la Fundacion Mision Jose Gregorio Hernandez, se trata de un sistema que usan los trabajadores de la Fundacion Mision Jose Gregorio Hernandez, el cual se encarga de registrar a las personas que poseen una discapacidad que necesitan una ayuda tecnica (silla de ruedas, muletas, andaderas, artificios),el sistema se usa a nivel nacional en los 23 estados del pais de Venezuela,  posee roles de usuario, ademas de que cada usuario esta asignado a un estado del pais, da graficas, reportes, estados de las solicitudes, el historial de la persona, designar el caso a otra gerencia etc. Posee diferentes modulos para cada gerencia con las funciones especificas para cada una de las gerencias las cuales necesitan. ',
 		shortDescription:
 			'Sistema de registro y entrega de ayudas tecnicas para las personas con discapacidad a nivel nacional.',
-		links: [{ to: 'https://github.com/Deiker619/sidaii.git', label: 'GitHub' }],
+		links: [],
 		logo: Assets.PHP,
 		name: 'Sistema Sidaii',
 		period: {
@@ -37,7 +37,7 @@ export const items: Array<Project> = [
 			'Junto con el equipo de tecnologia de la Fundacion Mision Jose Gregorio Hernandez, se construyo un sistema tipo intranet, el cual su funcion es informar a un trabajador individual sus reportes de pago, ademas de generarle una constancia de trabajo. Esto ayudo muchisimo, ya que anteriormente este proceso lo realizaba recursos humanos, ahora ,con este sistema , el trabajador tiene un usuario, el cual puede acceder al sistema mediante a un login. Puede cambiar sus credenciales, ademas de poder exportar a PDF sus reportes de pago del mes y tambien exportar a PDF su constancia de trabajo.',
 		shortDescription:
 			'Intranet la cual permite crear una constancia de trabajo y ver el reporte de ingresos que poseen los trabajadores.',
-		links: [{ to: 'https://github.com/Deiker619/intranet', label: 'GitHub' }],
+		links: [],
 		logo: Assets.Laravel,
 		name: 'Intranet (Fundacion Jose Gregorio Hernandez)',
 		period: {
@@ -61,7 +61,7 @@ export const items: Array<Project> = [
 		color: '#D11313',
 		description: 'Se logro desarrollar junto al equipo de tecnologia de la Fundacion Jose Gregorio Hernandez un sistema de inventario de sus bienes, estos son muletas, sillas de ruedas, baston, cama clinica, etc. El sistema se encarga de registrar el bien, para luego agregar la cantidad que se posee en el stock. Una vez hecho esto, si una persona o coordinacion necesita uno de los bienes de la Fundacion, en la seccion de retirar el stock, se procede realizar el proceso del retiro y se descuenta la cantidad del bien y se crea un comprobante en pdf del retiro. Se puede filtrar el historial de retiros por fechas, se tiene una tabla de la cantidad de bienes registrados ordenados por la cantidad de stock que poseen, es decir, el bien con mas stock del sistema es el que esta en la parte superior. El sistema luego se adapto para la organizacion Conapdis, el cual llevaba sus propios bienes.',
 		shortDescription: 'Sistema que se encarga de llevar un registro de los bienes para la Fundacion Jose Gregorio Hernandez.',
-		links: [{ to: 'https://github.com/Deiker619/bienes.git', label: 'GitHub' }],
+		links: [],
 		logo: Assets.Laravel,
 		name: 'Sistema de bienes (Fundacion Jose Gregorio Hernandez)',
 		period: {
