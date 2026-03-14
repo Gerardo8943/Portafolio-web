@@ -1,4 +1,4 @@
-import{A as e}from"./assets.4e347194.js";function m(t,...s){const r=Object.assign({},t);return Object.keys(r).forEach(n=>{s.includes(n)&&delete r[n]}),r}const d=`# Svelte
+import{A as e}from"./assets.53fab6f9.js";function m(t,...s){const r=Object.assign({},t);return Object.keys(r).forEach(n=>{s.includes(n)&&delete r[n]}),r}const d=`# Svelte
 
 ---
 
