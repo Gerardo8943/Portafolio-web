@@ -191,9 +191,14 @@ class Gerardo {
 		top: 0;
 		bottom: 0;
 
-		/* esto hace que se salga hacia la derecha */
-		left: 0;
+		/* Adjust width to avoid overflow on mobile, taking screen width into account */
+		left: -20vw;
 		width: 140vw;
+
+		@media (max-width: 768px) {
+			left: -5vw;
+			width: 110vw;
+		}
 
 		background: linear-gradient(90deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7));
 

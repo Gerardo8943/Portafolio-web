@@ -136,12 +136,13 @@
 
 	.nav-menu-mobile {
 		z-index: -1;
-		max-height: calc(100vh - 50px - 1px);
-		min-height: calc(100vh - 50px - 1px);
+		height: calc(100vh - 50px);
 		width: 100%;
-		position: absolute;
+		position: fixed;
+		overflow-y: auto;
 		background-color: var(--main);
-		top: 51px;
+		top: 50px;
+		left: 0;
 		transform: translateY(-100vh);
 		transition-property: transform opacity;
 		transition: 400ms ease;

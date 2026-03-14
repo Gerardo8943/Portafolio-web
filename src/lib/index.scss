@@ -160,10 +160,9 @@ body {
 
 	@media (max-width: 1075px) {
 		& {
-			max-width: -webkit-fill-available;
-			min-width: -webkit-fill-available;
-			max-width: -moz-available;
-			min-width: -moz-available;
+			max-width: 100%;
+			min-width: 100%;
+			padding: 0 20px;
 		}
 	}
 }
