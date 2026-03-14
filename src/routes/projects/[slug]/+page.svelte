@@ -26,6 +26,18 @@
 			? screenshots[screenIndex]
 			: undefined;
 
+	const handleNext = () => {
+		if (typeof screenIndex !== 'undefined') {
+			screenIndex = (screenIndex + 1) % screenshots.length;
+		}
+	};
+
+	const handlePrev = () => {
+		if (typeof screenIndex !== 'undefined') {
+			screenIndex = (screenIndex - 1 + screenshots.length) % screenshots.length;
+		}
+	};
+
 	$: computedTitle = data.project ? `${data.project.name} - ${title}` : title;
 </script>
 
@@ -111,7 +123,14 @@
 		</div>
 	{/if}
 </div>
-<Screenshot {screenshot} onClose={() => (screenIndex = undefined)} />
+<Screenshot 
+	{screenshot} 
+	index={screenIndex ?? 0}
+	total={screenshots.length}
+	onClose={() => (screenIndex = undefined)} 
+	onNext={handleNext}
+	onPrev={handlePrev}
+/>
 
 <style lang="scss">
 	.screenshot {
