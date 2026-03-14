@@ -48,13 +48,10 @@
 					<div class="w-75%">
 						<CardDivider />
 					</div>
-					
+
 					<div class="row-center flex-wrap m-b-2">
 						{#each data.project.skills as item}
-							<Chip
-								classes="inline-flex flex-row items-center justify-center"
-								href={`${base}/skills/${item.slug}`}
-							>
+							<Chip classes="inline-flex flex-row items-center justify-center">
 								<CardLogo
 									src={getAssetURL(item.logo)}
 									alt={item.name}

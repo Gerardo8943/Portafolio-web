@@ -73,9 +73,18 @@
 <SearchPage {title} on:search={onSearch}>
 	<div class="projects-filters">
 		{#each filters as tech}
-			<Chip active={tech.isSelected} classes={'text-0.8em'} on:click={() => onSelected(tech.slug)}
-				>{tech.name}</Chip
-			>
+<Chip
+	active={tech.isSelected}
+	classes={'text-0.8em'}
+	on:click={(e) => {
+		e.preventDefault();
+		e.stopPropagation();
+		onSelected(tech.slug);
+	}}
+>
+	{tech.name}
+</Chip>
+			
 		{/each}
 	</div>
 	{#if displayed.length === 0}
