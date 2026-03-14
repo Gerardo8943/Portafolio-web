@@ -12,6 +12,7 @@ export const items: Array<Project> = [
 			'Sistema de registro y entrega de ayudas tecnicas para las personas con discapacidad a nivel nacional.',
 		links: [],
 		logo: Assets.PHP,
+		logoSize: 60,
 		name: 'Sistema Sidaii',
 		period: {
 			from: new Date(2024, 4, 1), to: new Date(2026, 0, 14)
