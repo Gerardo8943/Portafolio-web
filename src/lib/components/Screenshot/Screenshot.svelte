@@ -78,7 +78,7 @@
 			<p
 				class="font-italic m-t-auto m-x-auto bg-[var(--main-60)] border-solid border-1px border-[var(--border)] p-x-5 p-2 rounded-xl"
 			>
-				{screenshot?.label} {total > 1 ? `(${index + 1}/${total})` : ''}
+				{total > 1 ? `(${index + 1}/${total})` : screenshot?.label}
 			</p>
 		</div>
 	</div>
