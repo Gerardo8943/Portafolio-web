@@ -38,7 +38,7 @@
             </div>
             <div class="availability">
                 <span class="pulse-dot"></span>
-                Disponible para trabajar — 2026
+                Disponible para trabajar
             </div>
         </div>
 

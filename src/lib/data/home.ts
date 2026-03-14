@@ -9,8 +9,9 @@ export const name = 'Gerardo Salazar';
 
 export const lastName = 'Fullstack Developer';
 
-export const description =
-	'Desarrollo sistemas administrativos escalables con laravel y crear arquitectura modular orientada a rendimiento.';
+export const description = `Ingeniero en Informática:
+Especialista en desarrollo Full Stack,
+diseño de bases de datos e integraciones de sistemas.`;
 
 
 

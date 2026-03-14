@@ -79,7 +79,7 @@ export const items: Array<Project> = [
 				src: '/proyectos/bienes/dashboard_bienes.png'
 			},
 			{
-				label: '2',
+				label: '3',
 				src: '/proyectos/bienes/retiro_bien.png'
 			}
 		]
@@ -111,7 +111,7 @@ export const items: Array<Project> = [
 				src: '/proyectos/google_traductor/traduccion_ej.png'
 			},
 			{
-				label: '3',
+				label: '4',
 				src: '/proyectos/google_traductor/traductor_dark.png'
 			},
 
