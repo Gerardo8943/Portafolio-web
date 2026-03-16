@@ -18,7 +18,7 @@ export const items: Array<Project> = [
 			from: new Date(2024, 4, 1), to: new Date(2026, 0, 14)
 		},
 		skills: getSkills('php', 'css', 'js', 'html', 'Myadmin', 'Github'),
-		type: 'Website Template',
+		type: 'Sistema web de registro y entrega de ayudas tecnicas',
 		screenshots: [
 			{
 				label: '1',
@@ -45,7 +45,7 @@ export const items: Array<Project> = [
 			from: new Date(2025, 1, 20), to: new Date(2025, 8, 14)
 		},
 		skills: getSkills('php', 'Laravel', 'Livewire','html', 'css', 'js', 'PostgreSQL','Github'),
-		type: 'Website Template',
+		type: 'Sistema web para recursos humanos',
 		screenshots: [
 			{
 				label: '1',
@@ -69,7 +69,7 @@ export const items: Array<Project> = [
 			from: new Date(2025, 1, 25), to: new Date(2025, 11, 16)
 		},
 		skills: getSkills('php', 'Laravel', 'Livewire','html', 'css', 'js', 'Myadmin', 'Github'),
-		type: 'Website Template',
+		type: 'Sistema web de inventario',
 		screenshots: [
 			{
 				label: '1',
@@ -94,10 +94,10 @@ export const items: Array<Project> = [
 		logo: Assets.JavaScript,
 		name: 'Clon de traductor Google',
 		period: {
-			from: new Date(2025, 9, 9)
+			from: new Date(2025, 13, 13)
 		},
 		skills: getSkills('html','css', 'js', 'NodeJs', 'ExpressJs', 'Github'),
-		type: 'Website Template',
+		type: 'Pagina web de traduccion de idiomas',
 		screenshots: [
 			{
 				label: '1',

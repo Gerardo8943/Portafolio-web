@@ -19,10 +19,10 @@ export interface PlatformLink {
 export type Icon = `i-${string}-${string}`;
 
 export enum ContractType {
-	FullTime = 'Full-time',
+	FullTime = 'Programador a tiempo completo',
 	PartTime = 'Part-time',
 	SelfEmployed = 'Self-employed',
-	Freelance = 'Freelance',
+	Freelance = 'Programador independiente',
 	Contract = 'Contract',
 	Internship = 'Internship'
 }
