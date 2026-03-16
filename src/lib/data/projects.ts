@@ -7,7 +7,7 @@ export const items: Array<Project> = [
 		slug: 'sistema-sidaii',
 		color: '#750C7D',
 		description:
-			'Sistema que fue realizado en colaboracion con el equipo de tecnologia de la Fundacion Mision Jose Gregorio Hernandez, se trata de un sistema que usan los trabajadores de la Fundacion Mision Jose Gregorio Hernandez, el cual se encarga de registrar a las personas que poseen una discapacidad que necesitan una ayuda tecnica (silla de ruedas, muletas, andaderas, artificios),el sistema se usa a nivel nacional en los 23 estados del pais de Venezuela,  posee roles de usuario, ademas de que cada usuario esta asignado a un estado del pais, da graficas, reportes, estados de las solicitudes, el historial de la persona, designar el caso a otra gerencia etc. Posee diferentes modulos para cada gerencia con las funciones especificas para cada una de las gerencias las cuales necesitan. ',
+			'Sistema que fue realizado en colaboracion con el equipo de tecnologia de la Fundacion Mision Jose Gregorio Hernandez, se trata de un sistema que usan los trabajadores de la institucion, el cual se encarga de registrar a las personas con discapacidad que necesiten alguna ayuda tecnica (silla de ruedas, muletas, andaderas, artificios),el sistema se usa a nivel nacional en los 23 estados del pais de Venezuela,  posee roles de usuario y estos estan asignados a un estado del pais, da graficas, reportes, estados de las solicitudes, el historial de la persona, designar el caso a otra gerencia etc.',
 		shortDescription:
 			'Sistema de registro y entrega de ayudas tecnicas para las personas con discapacidad a nivel nacional.',
 		links: [],
@@ -60,8 +60,8 @@ export const items: Array<Project> = [
 	{
 		slug: 'sistema-bienes',
 		color: '#D11313',
-		description: 'Se logro desarrollar junto al equipo de tecnologia de la Fundacion Jose Gregorio Hernandez un sistema de inventario de sus bienes, estos son muletas, sillas de ruedas, baston, cama clinica, etc. El sistema se encarga de registrar el bien, para luego agregar la cantidad que se posee en el stock. Una vez hecho esto, si una persona o coordinacion necesita uno de los bienes de la Fundacion, en la seccion de retirar el stock, se procede realizar el proceso del retiro y se descuenta la cantidad del bien y se crea un comprobante en pdf del retiro. Se puede filtrar el historial de retiros por fechas, se tiene una tabla de la cantidad de bienes registrados ordenados por la cantidad de stock que poseen, es decir, el bien con mas stock del sistema es el que esta en la parte superior. El sistema luego se adapto para la organizacion Conapdis, el cual llevaba sus propios bienes.',
-		shortDescription: 'Sistema que se encarga de llevar un registro de los bienes para la Fundacion Jose Gregorio Hernandez.',
+		description: 'Se logro desarrollar junto al equipo de tecnologia de la Fundacion Jose Gregorio Hernandez un sistema de inventario de sus bienes, estos son muletas, sillas de ruedas, baston, cama clinica, etc. El sistema se encarga de registrar los bienes, tener una lista de bienes registrados, la cantidad que posee en su stock, retirar bien si fue asignado a una persona o coordinacion que lo necesite y poder imprimir comprobantes en pdf del bien que fue retirado.',
+	shortDescription: 'Sistema que se encarga de llevar un registro de los bienes para la Fundacion Jose Gregorio Hernandez.',
 		links: [],
 		logo: Assets.Laravel,
 		name: 'Sistema de bienes (Fundacion Jose Gregorio Hernandez)',
@@ -88,7 +88,7 @@ export const items: Array<Project> = [
 	{
 		slug: 'clon-traductor-google',
 		color: '#FFF700',
-		description: 'Desarrolle un proyecto en solitario del mitico traductor de Google, el cual se desarrollo con HTML, CSS y Javascript como frontend y de backend se uso nodeJS y express. Se separo por carpetas el frontend y el backend. El traductor posee las funciones principales del traductor, puede traducir el lenguaje que se ingresa, puedes invertir el idioma, la funcion del microfono funciona y se pone a texto lo que dijiste a traducir, tiene un limite de 5000 caracteres, puedes copiar y pegar la traduccion ademas de poseer el modo oscuro, una funcion novedosa por mi parte el cual no posee el traductor de Google. Posee su mismo icono en la pestaña del navegador, su misma tipografia, el mismo logo y ser lo mas fiel posible.',
+		description: 'Desarrolle un proyecto en solitario el cual fue hacer un clon del traductor de Google, se desarrollo con HTML, CSS, Javascript en el lado del frontend y del backend se utilizo nodeJS y express. Se separo por carpetas individuales el frontend y el backend. El traductor posee las funciones principales del traductor, puede traducir el lenguaje que se ingresa, puedes invertir el idioma, la funcion del microfono funciona, se pone a texto lo que se dijo en el microfono, tiene un limite de 5000 caracteres, puedes copiar y pegar la traduccion ademas de poseer el modo oscuro, una funcion novedosa, la cual no posee el traductor de Google. Tiene mismo icono de traductor Google en la pestaña del navegador, su misma tipografia para ser lo mas fiel posible.',
 		shortDescription: 'Clon del traductor mas famoso de internet, puede escuchar audio de la traduccion, detectar idioma, etc. ',
 		links: [{ to: 'https://github.com/Gerardo8943/Traductor-Google-clon-', label: 'GitHub' }],
 		logo: Assets.JavaScript,
