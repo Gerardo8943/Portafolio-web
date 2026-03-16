@@ -154,6 +154,14 @@ export const items = [
 		logo: Assets.Github,
 		name: 'Github',
 		category: 'library'
+	}),
+		defineSkill({
+		slug: 'sql',
+		color: 'blue',
+		description: 'Lorem',
+		logo: Assets.sql,
+		name: 'SQL',
+		category: 'db'
 	})
 ] as const;
 

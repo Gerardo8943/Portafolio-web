@@ -11,7 +11,7 @@ export const items: Array<Experience> = [
 		type: 'Software Development',
 		location: 'Edificio latino',
 		period: { from: new Date(2022, 1, 14), to: new Date(2026, 0, 16) },
-		skills: getSkills('php', 'js', 'Laravel', 'Livewire', 'Myadmin','Github'),
+		skills: getSkills('php', 'js', 'Laravel', 'Livewire', 'Myadmin','Github', 'sql'),
 		name: 'Desarrollador de Software',
 		color: 'purple',
 		links: [],
@@ -21,7 +21,7 @@ export const items: Array<Experience> = [
 	{
 		slug: 'software-freelance',
 		company: 'La fabrica de la web (LLC)',
-		description: 'Mi rol dentro de la empresa fue ser un desarrollador de software fullstack, creando soluciones optimas, integraciones con el frontend y backend, creacion de modulos y mantenimiento de aplicaciones en wordpress, realizar funciones de CEO, crear documentacion tecnica legible y hacer funciones de atencion al cliente en soporte.',
+		description: 'Como Desarrollador Fullstack, desempeñé un rol integral en el ciclo de vida de las aplicaciones, desde la arquitectura de sistemas hasta la integración fluida entre frontend y backend. Desarrollé módulos personalizados y realicé el mantenimiento técnico de plataformas en WordPress, además de ejercer funciones de QA (Quality Assurance) para garantizar la estabilidad y el rendimiento del software. Mi labor incluyó la redacción de documentación técnica exhaustiva y la gestión de soporte técnico especializado. Debido a acuerdos de confidencialidad, los detalles específicos de los proyectos se mantienen bajo reserva',
 		contract: ContractType.Freelance,
 		type: 'Software Development',
 		location: 'Home',

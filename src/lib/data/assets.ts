@@ -76,6 +76,7 @@ const Assets = {
 	edificioSchool: a('edificioschool.svg'),
 	curso: a('curso.svg'),
 	pizarra: a('pizarra.svg'),
+	sql: a('sql.png'),
 	school: a('school.png'),
 	workHome: a('workhome.png'),
 	workOffice: a('workOffice.png'),

@@ -37,13 +37,14 @@
 			<UIcon icon="i-carbon-code" classes="text-2em" />
 			<span
 				class="ml-2 text-md font-bold hidden md:inline overflow-hidden whitespace-nowrap text-ellipsis"
-				>{HOME.name} {HOME.lastName}
+				>Home
 			</span>
 		</a>
-		<div class="flex-1 block overflow-hidden md:hidden whitespace-nowrap text-ellipsis text-center">
-			{HOME.name}
-			{HOME.lastName}
-		</div>
+		<a
+			href={`${base}/`}
+			class="flex-1 block overflow-hidden md:hidden whitespace-nowrap text-ellipsis text-center decoration-none text-[var(--secondary-text)]"
+			on:click={() => toggleExpanded(false)}
+		>Home</a>
 		<div class="flex-row flex-1 self-center h-full justify-center hidden md:flex">
 			{#each items as item (item.title)}
 				<a href={`${base}${item.to}`} class="nav-menu-item !text-[var(--secondary-text)]">

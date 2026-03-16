@@ -13,11 +13,11 @@ export const items: Array<Project> = [
 		links: [],
 		logo: Assets.PHP,
 		logoSize: 60,
-		name: 'Sistema Sidaii',
+		name: 'Sistema Sidaii (Fundacion Mision Jose Gregorio Hernandez)',
 		period: {
 			from: new Date(2024, 4, 1), to: new Date(2026, 0, 14)
 		},
-		skills: getSkills('php', 'css', 'js', 'html', 'Myadmin', 'Github'),
+		skills: getSkills('php', 'css', 'js', 'html', 'Myadmin', 'sql', 'Github'),
 		type: 'Sistema web de registro y entrega de ayudas tecnicas',
 		screenshots: [
 			{
@@ -28,7 +28,7 @@ export const items: Array<Project> = [
 				label: '2',
 				src: '/proyectos/sidaii/sidaii_dashboard.png'
 			},
-			
+
 		]
 	},
 	{
@@ -40,11 +40,11 @@ export const items: Array<Project> = [
 			'Intranet la cual permite crear una constancia de trabajo y ver el reporte de ingresos que poseen los trabajadores.',
 		links: [],
 		logo: Assets.Laravel,
-		name: 'Intranet (Fundacion Jose Gregorio Hernandez)',
+		name: 'Intranet (Fundacion Mision Jose Gregorio Hernandez)',
 		period: {
 			from: new Date(2025, 1, 20), to: new Date(2025, 8, 14)
 		},
-		skills: getSkills('php', 'Laravel', 'Livewire','html', 'css', 'js', 'PostgreSQL','Github'),
+		skills: getSkills('php', 'Laravel', 'Livewire', 'html', 'css', 'js', 'PostgreSQL', 'Github'),
 		type: 'Sistema web para recursos humanos',
 		screenshots: [
 			{
@@ -53,22 +53,26 @@ export const items: Array<Project> = [
 			},
 			{
 				label: '2',
-				src: '/proyectos/intranet/login_intranet.png'
+				src: '/proyectos/intranet/footer_intranet.png'
 			},
+			{
+				label: '3',
+				src: '/proyectos/intranet/login_intranet.png'
+			}
 		]
 	},
 	{
 		slug: 'sistema-bienes',
 		color: '#D11313',
-		description: 'Se logro desarrollar junto al equipo de tecnologia de la Fundacion Jose Gregorio Hernandez un sistema de inventario de sus bienes, estos son muletas, sillas de ruedas, baston, cama clinica, etc. El sistema se encarga de registrar los bienes, tener una lista de bienes registrados, la cantidad que posee en su stock, retirar bien si fue asignado a una persona o coordinacion que lo necesite y poder imprimir comprobantes en pdf del bien que fue retirado.',
-	shortDescription: 'Sistema que se encarga de llevar un registro de los bienes para la Fundacion Jose Gregorio Hernandez.',
+		description: 'Se logro desarrollar junto al equipo de tecnologia de la Fundacion Jose Gregorio Hernandez un sistema de inventario de sus bienes, estos son muletas, sillas de ruedas, baston, cama clinica, etc. El sistema se encarga de registrar los bienes, tener una lista de bienes registrados, la cantidad que posee en su stock, retirar bien si fue asignado a una persona o coordinacion que lo necesite y poder imprimir comprobantes en pdf del bien que fue retirado. Este sistema mejoro la productividad de la institucion, tener un mejor control de los bienes que poseen y de los que se retiran',
+		shortDescription: 'Sistema que se encarga de llevar un registro de los bienes y ayudas tecnicas',
 		links: [],
 		logo: Assets.Laravel,
-		name: 'Sistema de bienes (Fundacion Jose Gregorio Hernandez)',
+		name: 'Sistema de bienes (Fundacion Mision Jose Gregorio Hernandez)',
 		period: {
 			from: new Date(2025, 1, 25), to: new Date(2025, 11, 16)
 		},
-		skills: getSkills('php', 'Laravel', 'Livewire','html', 'css', 'js', 'Myadmin', 'Github'),
+		skills: getSkills('php', 'Laravel', 'Livewire', 'html', 'css', 'js', 'Myadmin', 'sql', 'Github'),
 		type: 'Sistema web de inventario',
 		screenshots: [
 			{
@@ -82,6 +86,10 @@ export const items: Array<Project> = [
 			{
 				label: '3',
 				src: '/proyectos/bienes/retiro_bien.png'
+			},
+			{
+				label: '4',
+				src: '/proyectos/bienes/stock_bienes.png'
 			}
 		]
 	},
@@ -96,7 +104,7 @@ export const items: Array<Project> = [
 		period: {
 			from: new Date(2025, 13, 13)
 		},
-		skills: getSkills('html','css', 'js', 'NodeJs', 'ExpressJs', 'Github'),
+		skills: getSkills('html', 'css', 'js', 'NodeJs', 'ExpressJs', 'Github'),
 		type: 'Pagina web de traduccion de idiomas',
 		screenshots: [
 			{
