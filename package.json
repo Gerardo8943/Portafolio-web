@@ -2,6 +2,9 @@
 	"name": "riadh-adrani",
 	"version": "0.0.1",
 	"private": true,
+	"engines": {
+		"node": ">=18 <=20"
+	},
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
