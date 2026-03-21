@@ -14,13 +14,13 @@
 namespace App\\Developer;
 
 class Gerardo {
-    public function getStack() {
-        return [
-            'backend'  => 'Laravel',
-            'frontend' => 'Livewire',
-            'database' => 'SQL'
-        ];
-    }
+  public function getStack() {
+    return [
+      'backend'  => 'Laravel',
+      'frontend' => 'Livewire',
+      'database' => 'SQL'
+    ];
+  }
 }`;
 
 	let aboutVisible = false;
@@ -208,8 +208,8 @@ class Gerardo {
 	pre {
 		margin: 0;
 		padding: 0;
-		white-space: pre-wrap;
-		word-break: break-all;
+		white-space: pre;
+		word-break: normal;
 	}
 
 	.neon-text {

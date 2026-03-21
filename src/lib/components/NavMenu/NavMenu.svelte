@@ -54,10 +54,10 @@
 			{/each}
 		</div>
 		<div
-			class="row h-full justify-center items-stretch m-l-auto md:m-l-0 w-auto md:w-150px gap-1 text-1.15em"
+			class="row h-full justify-center items-stretch m-l-auto md:m-l-0 w-auto md:w-150px gap-1 text-1.15em mr-4 md:mr-0"
 		>
 			
-			<div class="col-center md:hidden h-full hover:bg-[var(--main-hover)] cursor-pointer">
+			<div class="col-center md:hidden h-full hover:bg-[var(--main-hover)] cursor-pointer px-3 rounded-md">
 				<!-- svelte-ignore a11y-no-static-element-interactions -->
 				<div
 					class={`nav-bar-mobile-btn col-center ${expanded ? 'nav-bar-mobile-btn-expanded' : ''}`}
