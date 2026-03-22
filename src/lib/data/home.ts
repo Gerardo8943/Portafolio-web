@@ -23,7 +23,7 @@ export const links: PlatformLink[] = [
 	},
 	{
 		platform: Platform.Linkedin,
-		link: 'https://www.linkedin.com/feed/',
+		link: 'https://www.linkedin.com/in/gerardo-salazar-33b61b2a9/',
 		label: 'LinkedIn'
 	},
 	{
